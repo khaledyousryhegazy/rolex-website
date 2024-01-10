@@ -13,6 +13,8 @@ const toastAlert = () => {
     showConfirmButton: false,
     timer: 2000,
     timerProgressBar: true,
+    background: "var(--body-color)",
+    color: "var(--title-color)",
   });
   Toast.fire({
     icon: "success",
