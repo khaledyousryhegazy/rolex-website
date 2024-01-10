@@ -70,7 +70,7 @@ function Navbar() {
               }}
               className="hover-firstColor cursor-pointer text-[17px]"
             />
-            <span className="text-xs text-titleColor font-semibold text-actionColor">
+            <span className="text-xs text-titleColor font-semibold">
               {cartProducts.length}
             </span>
           </div>

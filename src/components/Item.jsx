@@ -5,6 +5,9 @@ import { addToCart } from "../toolkit/features/cartSlice";
 function Item({ item, type }) {
   const dispatch = useDispatch();
 
+  const handleBtn = () => {
+    dispatch(addToCart(item));
+  };
   return (
     <div className="relative hover:bg-firstColor transition duration-200 item flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-borderColor bg-boxColor shadow-md">
       <div className="relative mx-3 mt-3 flex h-60 overflow-hidden">
@@ -27,11 +30,10 @@ function Item({ item, type }) {
             $ {item?.price}
           </span>
         </div>
+
         <button
-          onClick={() => {
-            dispatch(addToCart(item));
-          }}
-          className="invisible flex w-full transition duration-200 items-center justify-center bg-buttonColor px-5 py-2.5 text-center text-sm font-medium text-textColor hover:bg-actionColor "
+          onClick={handleBtn}
+          className={` invisible flex w-full transition duration-200 items-center justify-center bg-buttonColor px-5 py-2.5 text-center text-sm font-medium text-textColor hover:bg-actionColor`}
         >
           <MdOutlineShoppingCart className="text-textColor me-2 text-lg" />
           Add to cart

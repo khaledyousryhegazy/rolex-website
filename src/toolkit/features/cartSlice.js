@@ -1,8 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Swal from "sweetalert2";
 
 const getInitailState = () => {
   const cartStorage = localStorage.getItem("cart");
   return cartStorage ? JSON.parse(cartStorage) : [];
+};
+
+const toastAlert = () => {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
+  Toast.fire({
+    icon: "success",
+    title: "Added To Cart Successfully",
+  });
 };
 
 const cartSlice = createSlice({
@@ -25,6 +40,9 @@ const cartSlice = createSlice({
 
       //   add to localStorage
       localStorage.setItem("cart", JSON.stringify(state));
+
+      // alert
+      toastAlert();
     },
 
     removeFromCart: (state, action) => {

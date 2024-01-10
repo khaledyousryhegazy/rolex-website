@@ -24,7 +24,7 @@ function Landing() {
           modern and resistant design.
         </p>
         <span className="text-firstColor font-semibold text-xl">$1245</span>
-        <div className="buttons text-textColor flex items-center">
+        <div className="buttons text-titleColor flex items-center">
           <button className="py-3 px-5 h-fit bg-textColorLight capitalize hover:bg-actionColor transition duration-200">
             discover
           </button>
